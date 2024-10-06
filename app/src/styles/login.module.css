@@ -1,0 +1,75 @@
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+
+.loginPage {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  animation: bg-scrolling 16s infinite;
+  animation-timing-function: linear; 
+  background-color: transparent;
+  background-image: 
+  linear-gradient(0deg, transparent 9%, 
+          rgba(255, 255, 255, .02) 10%, rgba(255, 255, 255, .02) 12%, transparent 13%, transparent 29%, 
+          rgba(255, 255, 255, .01) 30%, rgba(255, 255, 255, .01) 31%, transparent 32%, transparent 49%, 
+          rgba(255, 255, 255, .01) 50%, rgba(255, 255, 255, .01) 51%, transparent 52%, transparent 69%, 
+          rgba(255, 255, 255, .01) 70%, rgba(255, 255, 255, .01) 71%, transparent 72%, transparent 89%,
+          rgba(255, 255, 255, .01) 90%, rgba(255, 255, 255, .01) 91%, transparent 92%, transparent),
+  linear-gradient(90deg, transparent 9%, 
+          rgba(255, 255, 255, .02) 10%, rgba(255, 255, 255, .02) 12%, transparent 13%, transparent 29%, 
+          rgba(255, 255, 255, .01) 30%, rgba(255, 255, 255, .01) 31%, transparent 32%, transparent 49%, 
+          rgba(255, 255, 255, .01) 50%, rgba(255, 255, 255, .01) 51%, transparent 52%, transparent 69%, 
+          rgba(255, 255, 255, .01) 70%, rgba(255, 255, 255, .01) 71%, transparent 72%, transparent 89%,
+          rgba(255, 255, 255, .01) 90%, rgba(255, 255, 255, .01) 91%, transparent 92%, transparent);
+  
+  height:100%;
+  background-size:50px 50px;
+}
+
+.twinkle  {
+  animation-duration: .6s;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  transition: none;
+ }
+ @keyframes twinkle {
+  0% { opacity:0.6; }
+  40% {opacity:0; }
+  100% { opacity:0.6; }
+ }
