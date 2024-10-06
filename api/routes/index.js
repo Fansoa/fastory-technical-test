@@ -1,3 +1,3 @@
-const { searchRoute } = require("./search")
+const { searchRoute } = require('./search')
 
 exports.routes = [ searchRoute ]
