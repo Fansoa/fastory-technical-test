@@ -2,6 +2,7 @@ import { Controller, useFormContext } from "react-hook-form"
 import onKeyPressSound from "/sounds/SE_UpdateHeatmap.wav"
 import onErrorSound from "/sounds/SE_HideHeatmap.wav"
 import classNames from "../utils/methods/classNames"
+import { useCallback } from "react"
 
 type Props = {
     className?: string
@@ -11,15 +12,13 @@ type Props = {
 const TextInput = ({className, name, type, placeholder, autoComplete}: Props) => {
     const { control } = useFormContext()
 
-    function handleOnChange (){
-        new Audio(onKeyPressSound).play()
-    }
+    const handleOnChange = useCallback(() => new Audio(onKeyPressSound).play(), [])
 
-    function handleError (){
+    const handleError = useCallback(() => {
         const audio = new Audio(onErrorSound)
         audio.volume = 0.4
         audio.play()
-    }
+    }, [])
 
   return (
     <Controller

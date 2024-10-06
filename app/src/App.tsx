@@ -1,11 +1,16 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter } from "react-router-dom"
 import Routes from "./routes"
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes/>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 

@@ -2,8 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as zod from "zod"
 import onSubmitSound from "/sounds/UI_DiscOpen.wav"
-import { useNavigate } from "react-router-dom"
-import login from "../services/api"
+import useAuth from "./useAuth"
 
 const schema = zod.object({
     username: zod.string().min(1),
@@ -13,7 +12,7 @@ const schema = zod.object({
 type Schema = zod.infer<typeof schema>
 
 const useLoginForm = () => {
-    const navigate = useNavigate()
+    const { signIn } = useAuth()
     const methods = useForm<Schema>({
         defaultValues: {
             username: '',
@@ -21,17 +20,6 @@ const useLoginForm = () => {
         },
         resolver: zodResolver(schema)
     })
-
-    const signIn = async ({ username, password }) => {
-        const response = await login({ username, password })
-        
-        if (response.ok) {
-            navigate('/')
-        }
-
-        return response
-    }
-
     
     const onSubmit = ({username, password} : Schema) => {
         new Audio(onSubmitSound).play()
