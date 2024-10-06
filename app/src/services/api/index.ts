@@ -40,6 +40,5 @@ export const fetchResources = async (searchKeywords, filterOptions) => {
     )
     .then(res => res.json())
     
-    console.log("🚀 ~ fetchResources ~ data:", data)
     return data
 }
