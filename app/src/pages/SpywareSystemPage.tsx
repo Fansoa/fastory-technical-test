@@ -1,7 +1,11 @@
 
+import Scene from "../components/Scene";
+
 const SpywareSystemPage = () => {
   return (
-    <div>SpywareSystemPage</div>
+    <div className="absolute top-0 w-full h-screen">
+        <Scene/>
+    </div>
   )
 }
 
