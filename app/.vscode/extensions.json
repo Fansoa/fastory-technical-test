@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "PKief.material-icon-theme",
+    "ritwickdey.LiveServer",
+    "ChakrounAnas.turbo-console-log",
+    "dbaeumer.vscode-eslint",
+    "wayou.vscode-todo-highlight",
+    "naumovs.color-highlight"
+  ]
+}
