@@ -23,6 +23,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
 - [Node.js](https://nodejs.org/en/download/)
 - [npm](https://www.npmjs.com/get-npm)
 - Pour une meilleure expérience, utilisez le navigateur Chrome sur un support PC
+- L'ambiance sonore compte aussi, alors pensez à monter le son
 
 ### Étapes d'installation
 
@@ -30,7 +31,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
 
     ```bash
     git clone https://github.com/Fansoa/fastory-technical-test.git
-    cd nom-du-projet
+    cd fastory-technical-test
     ```
 
 2. Installez les dépendances pour l'API (back-end Hapi.js) et le front-end (React.js) :
