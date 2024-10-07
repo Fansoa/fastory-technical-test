@@ -135,7 +135,7 @@ api/                        # Back-end
 
 ### Front-end (React)
 
-Voici un aperçu de la structure de l'API :
+Voici un aperçu de la structure de l'app :
 
 ```bash
 app/                        # Front-end
@@ -145,7 +145,7 @@ app/                        # Front-end
 │   ├── hooks/              # Hooks Custom hook pour une optimisations des performances et une meilleure séparation des responsabilités
 │   ├── stores/             # Store Pour une gestion des états en dehors du VDOM React
 │   ├── styles/             # Module css
-├── ├──utils/               # Dossier contenant des outils, methods, constants..
+├──├──utils/               # Dossier contenant des outils, methods, constants..
 │   ├── services/
 │   │   └── api.js          # Service pour interagir avec l'API Hapi
 │   ├── App.js              # Composant principal avec les providers de context
