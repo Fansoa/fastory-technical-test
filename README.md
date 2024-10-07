@@ -113,9 +113,9 @@ password : `DadSucks`
 
 ## Structure du projet
 
-### Backend (Hapi.js)
+### Back-end (Hapi.js)
 
-Voici un aperçu de la structure des fichiers pour l'API :
+Voici un aperçu de la structure de l'API :
 
 ```bash
 api/                        # Back-end
@@ -129,8 +129,15 @@ api/                        # Back-end
 │   └── index.js            # Union des routes API
 ├── utils/                  # Dossier contenant des outils, methods, constants..
 │   └── index.js            # Définition des routes API
-├── server.js               # Configuration du serveur Hapi.js
+├── server.js               # Configuration du serveur 
 └── package.json            # Dépendances et scripts npm
+```
+
+### Front-end (React)
+
+Voici un aperçu de la structure de l'API :
+
+```bash
 app/                        # Front-end
 ├── src/
 │   ├── components/         # Composants React (ex: Overlay, TextInput)
