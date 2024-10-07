@@ -95,7 +95,6 @@ password : `DadSucks`
 ### Outils supplémentaires
 
 - **TypeScript** : Pour typer le code JavaScript.
-- 
 ## Fonctionnalités
 
 ### API
