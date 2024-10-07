@@ -58,7 +58,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
       npm run dev
     ```
 
-2. Le serveur devrait démarrer sur [http://localhost:3000](http://localhost:3000).
+2. Le serveur devrait démarrer sur [http://localhost:3001](http://localhost:3001).
 
 ### Démarrer le front-end (React.js)
 
@@ -69,7 +69,11 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
       npm run dev
     ```
 
-2. Le front-end sera accessible via [http://localhost:3001](http://localhost:3001).
+2. Le front-end sera accessible via [http://localhost:5173](http://localhost:5173).
+
+3. Pour vous authentifier sur le système d'espionnage de l'alliance rebelle 
+username : `Luke`
+password : `DadSucks`
 
 ## Technologies utilisées
 
