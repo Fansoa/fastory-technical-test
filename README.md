@@ -13,6 +13,7 @@ Ce projet est une application web composée d'une API développée avec Hapi.js 
 - [Technologies utilisées](#technologies-utilisées)
 - [Fonctionnalités](#fonctionnalités)
 - [Structure du projet](#structure-du-projet)
+- [Screenshots](#Screenshots)
 
 ## Installation
 
@@ -139,3 +140,10 @@ app/                        # Front-end
 │   ├── App.js              # Composant principal avec les providers de context
 │   └── index.js            # Point d'entrée de l'application
 └── package.json            # Dépendances et scripts npm```
+```
+
+# Screenshots
+
+![localhost_5173_login (1)](https://github.com/user-attachments/assets/96f09f99-1e5e-487b-8a45-ce07e12bea0f)
+
+![localhost_5173_login (3)](https://github.com/user-attachments/assets/37bf0d99-c2d1-49a9-b021-38f00942170b)
