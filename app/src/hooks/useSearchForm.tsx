@@ -26,34 +26,21 @@ const useSearchForm = () => {
         mutationFn: ({ search, filterOptions }) => fetchResources(search, filterOptions),
         onSuccess(data) {
             if(data?.statusCode === 401) navigation('/login')
+
+            const storeResourceByType = {
+                people: (results) => addPeople([...results.map(resource => ({...resource, resourceType: 'people'}))]),
+                film: (results) =>  addFilm([...results.map(resource => ({...resource, resourceType: 'film'}))]),
+                starship: (results) => addStarship([...results.map(resource => ({...resource, resourceType: 'starship'}))]),
+                vehicle: (results) => addVehicle([...results.map(resource => ({...resource, resourceType: 'vehicle'}))]),
+                specie: (results) => addSpecie([...results.map(resource => ({...resource, resourceType: 'specie'}))]),
+                planet: (results) => addPlanet([...results.map(resource => ({...resource, resourceType: 'planet'}))])
+            }
                 
             const nextInfinitePromiseList = data.reduce((acc, { requestType, results, next }) => {
-            if (requestType === "people") {
-                addPeople([...results.map(resource => ({...resource, resourceType: 'people'}))])
-                if (next) return [...acc ,fetch(next).then(res => res.json())]
-            }
-            if (requestType === "film")  {
-                addFilm([...results.map(resource => ({...resource, resourceType: 'film'}))])
+                storeResourceByType[requestType](results)
                 if (next) return [...acc, fetch(next).then(res => res.json())]
-            }
-            if (requestType === "starship") {
-                addStarship([...results.map(resource => ({...resource, resourceType: 'starship'}))])
-                if (next) return [...acc, fetch(next).then(res => res.json())]
-            }
-            if (requestType === "vehicle") {
-                addVehicle([...results.map(resource => ({...resource, resourceType: 'vehicle'}))])
-                if (next) return [...acc, fetch(next).then(res => res.json())]
-            }
-            if (requestType === "specie") {
-                addSpecie([...results.map(resource => ({...resource, resourceType: 'specie'}))])
-                if (next) return [...acc, fetch(next).then(res => res.json())]
-            }
-            if (requestType === "planet") {
-                addPlanet([...results.map(resource => ({...resource, resourceType: 'planet'}))])
-                if (next) return [...acc, fetch(next).then(res => res.json())]
-            }
-        
-            return [...acc]
+                
+                return [...acc]
         },[])
             setNextInfinitePromiseList(nextInfinitePromiseList)
         },
