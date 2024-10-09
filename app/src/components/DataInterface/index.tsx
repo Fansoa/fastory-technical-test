@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import useSpyingSystemStore from "../../stores/stores"
 import onChangeSound from "/sounds/SE_UpdateHeatmap.wav"
 import IconByResourceType from "./components/IconByResourceType"
@@ -24,8 +24,15 @@ const DataInterface = () => {
         specieList,
         planetList 
     } = useSpyingSystemStore((state) => state)
+    
     const resourceList = [peopleList, filmList, starshipList, vehicleList, specieList, planetList].flat()
-        
+
+    const filteredResourceList = useMemo(() => resourceList.filter(resource => 
+        (resource.name || resource.title)
+        .toLowerCase()
+        .includes(filterInput)
+    ), [resourceList, filterInput])
+
     return (
         <>
             <div className="w-2/4 flex flex-col gap-2">
@@ -39,25 +46,19 @@ const DataInterface = () => {
                     }}
                 />
                 <div className="flex flex-col gap-1 h-full overflow-y-auto bg-slate-900 rounded-sm">
-                    {resourceList
-                        .filter(resource => (resource.name || resource.title)
-                            .toLowerCase()
-                            .includes(filterInput)
-                        )
-                        .map(resource => (
-                            <div 
-                                key={resource.name || resource.title} 
-                                className="bg-slate-800 flex items-center gap-2 rounded-sm p-1 hover:bg-slate-700 cursor-pointer"
-                                onClick={() => {
-                                    handleSoundEvent()
-                                    setSelectedResource({...resource})
-                                }}
-                            >
-                                <IconByResourceType resourceType={resource.resourceType}/>
-                                <p className="text-white uppercase text-xl select-none">{resource.name || resource.title}</p>
-                            </div>
-                        ))
-                    }
+                    {filteredResourceList.map(resource => (
+                        <div 
+                            key={resource.name || resource.title} 
+                            className="bg-slate-800 flex items-center gap-2 rounded-sm p-1 hover:bg-slate-700 cursor-pointer"
+                            onClick={() => {
+                                handleSoundEvent()
+                                setSelectedResource({...resource})
+                            }}
+                        >
+                            <IconByResourceType resourceType={resource.resourceType}/>
+                            <p className="text-white uppercase text-xl select-none">{resource.name || resource.title}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
             <ContentByResource resource={selectedResource}/>
